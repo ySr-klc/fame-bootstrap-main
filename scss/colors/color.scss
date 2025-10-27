@@ -1,0 +1,409 @@
+// _theme-colors.scss
+// Tema renkleri için SCSS mixin ve değişkenleri
+
+// Renk değişkenleri
+$theme-colors: (
+  "light-green": #BCCF02,
+  "light-blue": #69D2E7,
+  "light-red": #FF432E,
+  "blue": #28ABE3,
+  "green": #5BB12F,
+  "yellow": #FED136
+);
+
+// Hover rengi
+$hover-color: #ea321e;
+
+// RGBA opacity değeri
+$rgba-opacity: 0.8;
+
+// Temel tema mixin'i
+@mixin theme-colors($color) {
+  // Text ve link renkleri
+  .text-primary {
+    color: $color;
+  }
+
+  a {
+    color: $color;
+  }
+
+  a:hover,
+  a:focus,
+  a:active,
+  a.active {
+    color: $hover-color;
+    text-decoration: none;
+  }
+
+  // Buton stilleri
+  .btn-primary {
+    border-color: $color;
+    background-color: $color;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    .open .dropdown-toggle & {
+      border-color: $hover-color;
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] &,
+    &.disabled:hover,
+    &[disabled]:hover,
+    fieldset[disabled] &:hover,
+    &.disabled:focus,
+    &[disabled]:focus,
+    fieldset[disabled] &:focus,
+    &.disabled:active,
+    &[disabled]:active,
+    fieldset[disabled] &:active,
+    &.disabled.active,
+    &[disabled].active,
+    fieldset[disabled] &.active {
+      border-color: $color;
+      background-color: $color;
+    }
+
+    .badge {
+      color: $color;
+    }
+  }
+
+  // XL Buton
+  .btn-xl {
+    border-color: $color;
+    background-color: $color;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    .open .dropdown-toggle & {
+      border-color: $hover-color;
+      background-color: $hover-color;
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] &,
+    &.disabled:hover,
+    &[disabled]:hover,
+    fieldset[disabled] &:hover,
+    &.disabled:focus,
+    &[disabled]:focus,
+    fieldset[disabled] &:focus,
+    &.disabled:active,
+    &[disabled]:active,
+    fieldset[disabled] &:active,
+    &.disabled.active,
+    &[disabled].active,
+    fieldset[disabled] &.active {
+      border-color: $color;
+      background-color: $color;
+    }
+
+    .badge {
+      color: $color;
+      background-color: #fff;
+    }
+  }
+
+  // Navbar stilleri
+  .navbar-default {
+    .navbar-brand {
+      color: $color;
+
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        color: $color;
+      }
+    }
+
+    .navbar-toggle {
+      border-color: $color;
+      background-color: $color;
+
+      &:hover,
+      &:focus {
+        background-color: $color;
+      }
+    }
+
+    .nav li a {
+      &:hover,
+      &:focus {
+        outline: 0;
+        color: $color;
+      }
+    }
+
+    .navbar-nav > .active > a {
+      background-color: $color;
+
+      &:hover,
+      &:focus {
+        background-color: $color;
+      }
+    }
+  }
+
+  // Menu stilleri
+  .menu-wrap {
+    a {
+      &:hover,
+      &:focus {
+        color: $color;
+      }
+    }
+
+    .logo {
+      color: $color;
+    }
+  }
+
+  .menu-button {
+    background: $color;
+  }
+
+  // Header ve başlık stilleri
+  .header .intro-text h1 span {
+    color: $color;
+  }
+
+  .main-title strong {
+    color: $color;
+  }
+
+  // Feature stilleri
+  .feature {
+    i {
+      background: $color;
+    }
+
+    .no-touch &:hover i,
+    .no-touch &:active i,
+    .no-touch &:focus i {
+      box-shadow: 0 0 0 0 $color;
+    }
+  }
+
+  .feature-2 {
+    i {
+      background: $color;
+      border: 1px solid $color;
+    }
+
+    &:hover {
+      i {
+        background: transparent;
+        color: $color;
+      }
+
+      .border {
+        border-color: $color;
+      }
+    }
+  }
+
+  .feature-3 {
+    i {
+      color: $color;
+      border: 1px solid $color;
+    }
+
+    &:hover {
+      i {
+        background: $color;
+        color: #fff;
+      }
+
+      .border {
+        border-color: $color;
+      }
+    }
+  }
+
+  // Portfolio stilleri
+  .portfolio-caption a i {
+    color: $color;
+  }
+
+  .portfolio-item:hover .portfolio-caption {
+    background-color: rgba($color, $rgba-opacity);
+  }
+
+  // Welcome section
+  .welcome-section {
+    &:hover {
+      .border {
+        border-color: $color;
+      }
+
+      h4 {
+        color: $color;
+      }
+    }
+  }
+
+  // About section
+  .about-text li i {
+    color: $color;
+  }
+
+  // Carousel stilleri
+  .about-us-section-2 .carousel-indicators li,
+  .project-image .carousel-indicators li {
+    border: 2px solid $color !important;
+  }
+
+  .about-us-section-2 .carousel-indicators .active,
+  .project-image .carousel-indicators .active {
+    background-color: $color;
+  }
+
+  // Owl carousel
+  .owl-theme .owl-controls .owl-buttons div {
+    background: $color;
+  }
+
+  // Team section
+  #team-section .nav-tabs.nav-justified {
+    background: $color;
+  }
+
+  .team-member .team-details {
+    background-color: rgba($color, $rgba-opacity);
+  }
+
+  // Counter ve timer
+  .counter-item i {
+    color: $color;
+  }
+
+  .timer {
+    color: $color;
+  }
+
+  // Latest post
+  .latest-post {
+    h4 {
+      color: $color;
+    }
+
+    .post-details {
+      li i {
+        color: $color;
+      }
+
+      .date {
+        background: rgba($color, $rgba-opacity);
+      }
+    }
+  }
+
+  // Testimonials
+  .testimonials {
+    .testimonial-content img {
+      border: 3px solid $color;
+    }
+
+    .testimonial-author .author {
+      color: $color;
+    }
+  }
+
+  .testimonials-carousel .owl-controls.clickable .owl-buttons div {
+    color: $color;
+  }
+
+  .owl-theme .owl-controls .owl-page.active {
+    background-color: $color;
+  }
+
+  // Contact form
+  .contact .form-control:focus {
+    border-color: $color;
+    box-shadow: none;
+  }
+
+  // Footer
+  footer.style-1 {
+    border-top: 2px solid $color;
+
+    .footer-social li a {
+      background: $color;
+    }
+  }
+
+  // Call to action
+  .call-to-action h1 strong {
+    color: $color;
+  }
+
+  // Team details
+  .team-details li a {
+    background: $color;
+  }
+
+  // Progress bar
+  .progress-bar {
+    background: $color;
+  }
+
+  // Pricing tables
+  .pricing-tables .pricing-table.highlight-plan {
+    .plan-name {
+      background: $color;
+    }
+
+    .plan-signup {
+      background: $color;
+    }
+  }
+
+  .plan-name {
+    background: $color;
+  }
+
+  .plan-signup {
+    background: $color;
+  }
+
+  // Footer contact info
+  .footer-contact-info {
+    background: rgba($color, $rgba-opacity);
+  }
+
+  // Slider
+  #main-slide .slider-content h1 strong {
+    color: $color;
+  }
+
+  // Custom tab
+  .custom-tab .nav-tabs.nav-justified {
+    background: $color;
+  }
+
+  // Dots
+  .dot1, .dot2 {
+    background-color: $color;
+  }
+}
+
+// Tema sınıfları oluşturma
+@each $name, $color in $theme-colors {
+  .theme-#{$name} {
+    @include theme-colors($color);
+  }
+}
+
+// Varsayılan tema (isteğe bağlı)
+.default-theme {
+  @include theme-colors(map-get($theme-colors, "blue"));
+}
